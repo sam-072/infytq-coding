@@ -316,7 +316,28 @@ print(z)
 # input : Assign,zzzzzzxzsdxs,Madammxmsgn,1a12231a
 # output : xzsd
 
-# >>>>>>> Animesh 2nd qusetion 
+# >>>>>>> Animesh 2nd qusetion divide the even no by 2 and odd number *3 +1 
+
+arr = list(map(int,input().split(',')))
+n = len(arr)
+ans = []
+for i in range(n):
+    l = []
+    l.append(arr[i])
+    while arr[i] != 1:
+        if arr[i]%2==0:
+            arr[i] = arr[i]//2
+            l.append(arr[i])
+        else:
+            arr[i]=(3*arr[i])+1
+            l.append(arr[i])
+    ans.append(len(l))
+for i in range(len(ans)):
+    if i == len(ans)-1:
+        print(ans[i],end=',')
+    else:
+        print(ans[i])
+            
 
 
 
@@ -341,5 +362,7 @@ for i in range(n):
         print(ans[i],end=',')
     else:
         print(ans[i])
+        
+  
  
     
