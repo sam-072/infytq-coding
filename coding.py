@@ -363,6 +363,52 @@ for i in range(n):
     else:
         print(ans[i])
         
-  
+ ----------------------------------------------------------------------------------------
+# >>>>>>>>>> Yash first question matrix multiplication
+
+m = int(input())
+mat1 = []
+for i in range(m):
+    mat1.append(list(map(int,input().split(','))))
+n = int(input())
+mat2 = []
+for i in range(n):
+    mat2.append(list(map(int,input().split(','))))
+p = len(mat2[0])
+mat = [[sum(a * b for a, b in zip(A_row, B_col)) for B_col in zip(*mat2)] for A_row in mat1]
+ans = []
+k = 0
+for i in range(p):
+    for j in range(m//2):
+        ans.append(mat[k%m][i])
+        k += 1
+k = 0
+for i in range(m):
+    for j in range(p//2):
+        ans.append(mat[i][k%p])
+        k += 1
+n = len(ans)
+for i in range(n):
+    if i != n-1:
+        print(ans[i],end=',')
+    else:
+        print(ans[i])
+ 
+# input :
+# 5
+# 2,8,3,7,5
+# 5,6,6,1,6
+# 7,3,2,6,6
+# 2,4,6,9,4
+# 5,7,7,8,6
+# 5
+# 3,7,1,6,5
+# 6,5,6,8,4
+# 4,4,6,8,5
+# 4,4,6,8,1
+# 8,5,7,5,4
+
+# output: 134,127,126,114,179,145,164,160,81,120,134,119,125,164,87,119,114,144,236,120
+
  
     
